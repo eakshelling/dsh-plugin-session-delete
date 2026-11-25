@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Delete conversations permanently",
+    "description": "Right-click a conversation to permanently delete it: session log, projection cache, and workspace membership."
+  }
+}

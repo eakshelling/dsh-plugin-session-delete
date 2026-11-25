@@ -1,0 +1,65 @@
+{
+  "name": "dsh-plugin-session-delete",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Right-click a conversation to permanently delete it: session log files, projection cache, and workspace membership; conversations still live in memory are queued and deleted on next start.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "assets",
+    "screenshots.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-context-menu",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "license": "MIT",
+  "author": "eakshelling",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eakshelling/dsh-plugin-session-delete.git"
+  },
+  "homepage": "https://github.com/eakshelling/dsh-plugin-session-delete#readme",
+  "bugs": {
+    "url": "https://github.com/eakshelling/dsh-plugin-session-delete/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "session",
+    "delete",
+    "cleanup"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
